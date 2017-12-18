@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				width: auto;
+				background: #001424;
+				font-family: "微软雅黑";
+			}
+			
+			.btn {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-around;
+			}
+			
+			.btn div {
+				/*background: #FFC0CB;*/
+				margin: 50px 50px;
+				text-align: center;
+			}
+			
+			input[type=button] {
+				font-size: 18px;
+				margin-top: 20px;
+				margin-left: 30px;
+				margin-right: 30px;
+				width: 140px;
+				height: 50px;
+				text-align: center;
+				border-radius: 10px;
+			}
+			
+			.btn1 {
+				background: #60cb1b;
+				color: #fff;
+				text-shadow: 0 -1px 1px #CC6600;
+				-webkit-border-radius: 8px;
+				box-shadow: 5px 5px 5px 12px #FFEE99;
+				-webkit-animation-name: "btnani";
+				-webkit-animation-duration: 5s;
+				-webkit-animation-iteration-count: infinite;
+			}
+			
+			@-webkit-keyframes 'btnani' {
+				from {
+					background: #FF7F50;
+					-webkit-box-shadow: 0 0 0px 3px #FF7F50;
+					color: #FFFFFF;
+					border: none;
+				}
+				25% {
+					background: #FFAA33;
+					-webkit-box-shadow: 0 0 10px 6px #FFAA33;
+					color: #B22222;
+					border: none;
+				}
+				50% {
+					background-color: #66CDAA;
+					-webkit-box-shadow: 0 0 0px 3px #66CDAA;
+					color: orange;
+					border: none;
+				}
+				75% {
+					background-color: #FF4500;
+					-webkit-box-shadow: 0 0 10px 6px #FF4500;
+					color: #4169E1;
+					border: none;
+				}
+				to {
+					background: #00FF7F;
+					-webkit-box-shadow: 0 0 0px 3px #00FF7F;
+					color: green;
+					border: none;
+				}
+			}
+			
+			.btn2 {
+				border-radius: 8px;
+				background: #FFA488;
+				color: #FFFF77;
+				border: 1px solid #FFFFBB;
+			}
+			
+			.btn2:hover {
+				border: none;
+				background: -webkit-linear-gradient(top, #FFDDAA, #FFA488, #FFDDAA);
+				color: #FFFFFF;
+				/*box-shadow: h-shadow v-shadow blur spread color inset;*/
+				box-shadow: 0px 0px 10px 5px #FFEE99;
+				text-shadow: 5px 5px 5px darkorange;
+			}
+			
+			#btn3 {
+				border-radius: 8px;
+				background: #7FFFD4;
+				color: #FFFFFF;
+				border: 1px solid #FFFFBB;
+				/*position: relative;*/
+			}
+			
+			#btn3:hover {
+				background: rgba(0, 0, 0, 0.1);
+			}
+			
+			.num3 span:hover:after {
+				content: 'information';
+				color: #66FF99;
+				background-color: #FF9966;
+				margin-left: -30px;
+				margin-top: 10px;
+				width: 90px;
+				height: 20px;
+				position: absolute;
+			}
+			
+			.num3 span:hover:before {
+				content: '';
+				display: block;
+				width: 0;
+				height: 0;
+				border-right: 10px solid #FF9966;
+				border-top: 10px solid transparent;
+				border-bottom: 10px solid transparent;
+				position: absolute;
+				margin-left: 160px;
+				margin-top: 10px;
+			}
+			
+			#btn4 {
+				border-radius: 8px;
+				background: none;
+				border: 2px solid #FF6347;
+				color: #FFFF93;
+				text-align: center;
+				position: relative;
+				vertical-align: middle;
+			}
+			
+			#raw {
+				width: 160px;
+				height: 160px;
+				display: none;
+			}
+			/*.roll{
+			border: 1px solid #FFFFFF;
+			display: block;
+			margin-left: 20px;
+			-webkit-animation-name: roll;
+			-webkit-animation-delay: 2s;
+			-webkit-animation-direction: reverse;
+			-webkit-animation-duration: 2s;
+			-webkit-animation-timing-function: ease-in;
+			-webkit-animation-iteration-count: infinite;
+			
+		}*/
+			
+			@-webkit-keyframes roll {
+				from {
+					transform: rotate(360deg) scale(0.5);
+					border: 1px solid #FF5151;
+				}
+				25% {
+					transform: rotate(720deg) scale(0.8);
+					border: 3px dotted #FF5809;
+				} 
+				80% {
+					transform: rotate(360deg) scale(0.5);
+					border: 1px solid #00E3E3;
+				}
+				85% {
+					transform: rotate(720deg) scale(0.8);
+					border: 3px dotted #FFB5B5;
+				}
+				to {
+					transform: rotate(360deg) scale(0.5);
+					border: 1px solid #FFFFF4;
+				}
+			}
+			
+			.btn5 {
+				border-radius: 10px;
+				background-color: #FF2D2D;
+				border: none;
+				box-shadow: 0px 0px 10px 2px #FFEE99;
+				transition: background-color 2s linear;
+			}
+			
+			.btn5:hover {
+				background-color: #FFB5B5;
+				color: #FFFFAA;
+			}
+			
+			.num5 span {
+				transition: all 1s linear;
+			}
+			
+			.num5 span:hover:before {
+				content: "Welcome";
+				color: #FFFFFF;
+				/*background-color: 	#53FF53;*/
+				border: 1px solid #53FF53;
+				border-left-style: none;
+				margin-left: 160px;
+				margin-top: 22px;
+				width: 100px;
+				height: 45px;
+				position: absolute;
+				line-height: 44px;
+				z-index: -1;
+				text-align: center;
+				border-radius: 5px;
+				border-top-color: #FF5809;
+				border-bottom-color: #D7FFEE;
+			}
+			
+			.btn6 {
+				background-color: #F75000;
+				color: #DEFFAC;
+				border: 3px solid #5B5B5B;
+				/*box-shadow: -1px -1px  6px #FFEE99;*/
+				border-top: none;
+				background-image: url(img/button_bg.png) ;
+				background-repeat: repeat;
+				background-size: 140%;
+				background-position: 30% 20% ;
+				-webkit-transition:background-position,background-size 1s  ;
+			}
+			.btn6:hover{
+				font-size: 22px;
+				color: palegreen;
+				background-size: 80%;
+				background-position: left top bottom 40%;
+				box-shadow: -1px -1px  6px #FFEE99;
+				/*transform: rotate(40deg);	*/
+			}
+			/*.num7 span:hover{
+				background: none;
+			}*/
+			/*.num7 span input:hover{
+				color: #2894FF;
+				background: none;
+			}*/
+			.num7 span:hover input{
+				background: none;
+			}
+			.num7 span:hover:after{
+				background: none;
+				width: 140px;
+				height: 50px;
+				content: "";
+				color: red;
+				position: absolute;
+				margin-left: -74px;
+				margin-top: -54px;
+				border-radius: 10px;
+				border: 1px solid red;
+				-webkit-animation-name: bordroll;
+			-webkit-animation-duration: 3s;
+			-webkit-animation-timing-function: ease-in;
+			-webkit-animation-iteration-count: infinite;
+			}
+			
+			@-webkit-keyframes bordroll {
+				from {
+					transform:  scale(0.5);
+					border: 3px solid #FF5151;
+					background: none;
+				}
+				25% {
+					transform:  scale(0.8);
+					border: 6px dotted #FF5809;
+					background: none;
+				} 
+				80% {
+					transform:  scale(1);
+					border: 3px solid #28FF28;
+					background: none;
+				}
+				85% {
+					transform:  scale(0.8);
+					border: 6px dotted #FFB5B5;
+					background: none;
+				}
+				to {
+					transform:  scale(0.5);
+					border: 3px solid #FFFFF4;
+					background: none;
+				}
+			}
+				.btn7 {
+				background: #28FF28;
+				color: #ff7575;
+				border: none;
+				/*border: 2px solid #28FF28;*/
+				
+			}
+			/*.btn7:hover{
+				color: #2894FF;
+			}
+			*/
+		
+			.btn8 {
+				border-radius: 20px !important;
+				background-color: #FFDC35;
+				color: #2894FF;
+				border: none;
+			}
+			.num8 span:hover input{
+				background: none;
+				width: 150px;
+				height: 55px;
+				border: 3px solid #FFDC35;
+			}
+			.num8 span:hover:after{
+				/*background: rgba(0,0,0,0.5);*/
+				background:#FFDC35 ;
+				width: 110px;
+				height: 38px;
+				content: "Button8";
+				line-height: 35px;
+				position: absolute;
+				margin-left: -158px;
+				margin-top: 28px;
+				border-radius: 20px;
+				color: #2894FF;
+				box-shadow: 0px 0px 4px 2px burlywood;
+				
+			}
+			.num9 {
+				border-radius: 20px;
+				background: #00E3E3;
+				border: 1px solid #f5b74e;
+				width: 140px;
+				height: 48px;
+				display: inline-block;
+				position: relative;
+				border-radius: 8px;
+				color: #FFFFFF;
+				top: 20px;
+				/*left: 8px;*/
+				overflow: hidden;
+				-webkit-transition: all 0.3s linear;
+			}
+			
+			.num9:hover {
+				background-color: #FF5809;
+				height: 80px;
+			}
+			
+			.num9 input {
+				color: #FFFFFF;
+				width: 100px;
+				height: 30px;
+				margin-bottom: 4px;
+				margin-left: 8px;
+				margin-top: 10px;
+				border: none;
+				background: none;
+			}
+			
+			.num9:hover input {
+				color: lightpink;
+			}
+			
+			.num9 .sun {
+				margin-left: 100px;
+				position: relative;
+				top: -54px;
+				font-size: 20px;
+			}
+			
+			.num9:hover .sun {
+				color: #53FF53;
+				-webkit-transform: skew(20deg);
+				cursor: pointer;
+			}
+			
+			.num9:hover .slide:hover {
+				border-radius: 10px;
+				position: relative;
+				margin-left: 5px;
+				top: 2px;
+				background: #FF9224;
+				width: 100px;
+				height: 30px;
+				font-size: 18px;
+				/*white-space: nowrap;*/
+				overflow: hidden;
+				/*line-height: 40px;*/
+				height: 0px;
+				width: 100px;
+				box-shadow: 0px 0px 4px 2px burlywood inset;
+				-webkit-transition: height 0.3s linear;
+			}
+			
+			.slide:hover {
+				height: 60px;
+				color: palegreen;
+				background-color: #FFA042;
+				-webkit-transform: scale(2.0);
+				cursor: pointer;
+			}
+			
+			.num10 {
+				background: #FF5151;
+				height: 50px;
+				width: 140px;
+				display: inline-block;
+				position: relative;
+				border: 1px solid #5d81ab;
+				border-radius: 10px;
+				top:20px;
+				overflow: hidden;
+				-webkit-transition: all 0.3s linear;
+				box-shadow: 0px 0px 4px 2px burlywood inset;
+			}
+			
+			.btn10 {
+				background-color: #FF8040;
+				border: none;
+				border-radius: 10px;
+				margin-top: 5px;
+				margin-left: 10px;
+				display: block;
+				width: 90px;
+				height: 40px;
+				font-size: 18px;
+				color: #446388;
+				-webkit-transition: all 0.2s linear;
+			}
+			
+			.slide10 {
+				position: absolute;
+				height: 100%;
+				top: 0px;
+				right: 52px;
+				width: 0px;
+				background: #FF9D6F;
+				text-shadow: 0px -1px 1px #363f49;
+				color: #fff;
+				font-size: 18px;
+				text-align: center;
+				line-height: 44px;
+				overflow: hidden;
+				-webkit-transition: width 0.3s linear;
+				box-shadow: 0px 0px 4px 2px #FFFCEC inset;
+			}
+			
+			.sun10 {
+				color: #FFFFFF;
+				position: absolute;
+				right: 0px;
+				top: 10px;
+				height: 100%;
+				width: 52px;
+				/* border-left:1px solid #5d81ab;*/
+			}
+			
+			.num10:hover {
+				padding-right: 150px;
+				box-shadow: 0px 0px 4px 2px #FFFCEC inset;
+			}
+			
+			.num10:hover .btn10 {
+				margin-left: 20px;
+				text-shadow: 0px 1px 1px #5d81ab;
+				color: #fff;
+				width: 100px;
+			}
+			.num10:hover .sun10 {
+				-webkit-transform: scale(2.0);
+				top: 24px;
+			}
+			.num10:hover .slide10 {
+				width: 100px;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var btnobj = document.getElementById("btn4");
+				btnobj.addEventListener("click", cu_show, false);
+
+			}
+
+			function cu_show() {
+				var rawobj = document.getElementById("raw");
+				//					rawobj.style.background="#FFFFFF";
+				rawobj.style.display = "block";
+				rawobj.style.border = "1px solid #FFFFFF";
+				rawobj.style.borderRadius = "50%";
+				rawobj.style.webkitAnimation = "roll  3s ease-in infinite";
+				rawobj.style.marginLeft = "18px";
+				rawobj.style.marginTop = "-30px";
+				rawobj.style.position = "absolute";
+				//	rawobj.className="roll";
+
+			}
+		</script>
+	</head>
+
+	<body>
+		
+		<div class="btn">
+			<div><input type="button" class="btn1" value="Button1" /></div>
+			<div><input type="button" class="btn2" value="Button2" /></div>
+			<div class="num3"><span><input type="button" id="btn3" value="Button3"/></span></div>
+			<div>
+				<div id="raw"></div>
+				<input type="button" id="btn4" value="Button4" />
+
+			</div>
+			<div class="num5">
+				<span>	<input type="button" class="btn5" value="Button5" /></span>
+			</div>
+			<div><input type="button" class="btn6" value="Button6" /></div>
+
+			<div class="num7">
+				<span>
+					<input type="button" class="btn7" value="Button7" />
+				</span>
+			</div>
+			<div class="num8"><span><input type="button" class="btn8" value="Button8" /></span></div>
+			<div class="num9">
+				<input type="button" class="btn9" value="Button9" />
+				<span class="slide">imfomation</span>
+				<span class="sun">→</span>
+			</div>
+
+			<!--<div><input type="button" class="btn10" value="Button10" /></div>-->
+			<div class="num10">
+				<button class="btn10">Button10</button>
+				<span class="slide10">More</span>
+				<span class="sun10">☀</span>
+			</div>
+		</div>
+
+	</body>
+
+</html>
